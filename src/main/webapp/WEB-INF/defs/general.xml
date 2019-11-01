@@ -46,11 +46,11 @@
 		<put-attribute name="current" value="403" />
 	</definition>
 
-<!--	<definition name="sistemaArmas" extends="conNavBar">
+	<definition name="sistemaArmas" extends="conNavBar">
 		<put-attribute name="title" value="SGL Sistema de Armas" />
 		<put-attribute name="body" value="/WEB-INF/jsp/sistemaArmas.jsp" />
 		<put-attribute name="current" value="sistemaArmas" />
-	</definition>-->
+	</definition>
 
 <!--	<definition name="roles" extends="conNavBar">
 		<put-attribute name="title" value="SGL Roles" />

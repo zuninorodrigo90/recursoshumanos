@@ -6,7 +6,7 @@
 
 	<div class="col-md-6">
 	<h2>Administración de Sistema de Armas</h2>
-		<security:authorize access="(hasRole('ROLE_ADMIN') or hasRole('ROLE_SISTEMA_ARMAS_SAVE'))">
+		<%--<security:authorize access="(hasRole('ROLE_ADMIN') or hasRole('ROLE_SISTEMA_ARMAS_SAVE'))">--%>
 			<form:form commandName="sistemaArmas"
 				cssClass="form-horizontal registrationForm">
 				<form:hidden id="idSistemaArmas" path="id" cssClass="form-control" />
@@ -44,7 +44,7 @@
 						</div>
 					</div>
 			</form:form>
-		</security:authorize>
+		<%--</security:authorize>--%>
 	</div>
 
 	<div class="col-md-6">
@@ -57,10 +57,10 @@
 						<tr class="active">
 							<td>Código</td>
 							<td>Designación</td>
-							<security:authorize
-								access="(hasRole('ROLE_ADMIN') or hasRole('ROLE_SISTEMA_ARMAS_DELETE') or hasRole('ROLE_SISTEMA_ARMAS_SAVE'))">
+							<%--<security:authorize--%>
+								<!--access="(hasRole('ROLE_ADMIN') or hasRole('ROLE_SISTEMA_ARMAS_DELETE') or hasRole('ROLE_SISTEMA_ARMAS_SAVE'))">-->
 								<td>Acción</td>
-							</security:authorize>
+							<%--</security:authorize>--%>
 						</tr>
 					</thead>
 					<tbody>
@@ -83,42 +83,46 @@
 										title="Sistema de Armas NO vigente">
 										<td>${s.code}</td>
 										<td>${s.description}</td>
-										<security:authorize
-											access="(hasRole('ROLE_ADMIN') or hasRole('ROLE_SISTEMA_ARMAS_DELETE') or hasRole('ROLE_SISTEMA_ARMAS_SAVE'))">
-											<td><security:authorize
-													access="(hasRole('ROLE_ADMIN') or hasRole('ROLE_SISTEMA_ARMAS_SAVE'))">
+										<%--<security:authorize--%>
+											<!--access="(hasRole('ROLE_ADMIN') or hasRole('ROLE_SISTEMA_ARMAS_DELETE') or hasRole('ROLE_SISTEMA_ARMAS_SAVE'))">-->
+											<td>
+                                                                                            <%--<security:authorize--%>
+													<!--access="(hasRole('ROLE_ADMIN') or hasRole('ROLE_SISTEMA_ARMAS_SAVE'))">-->
 													<a onclick="app.findElementById(${s.id})"
 														data-toggle="tabla" title="Modificar"
 														class="glyphicon glyphicon-edit triggerEdit"> </a>
-												</security:authorize> <security:authorize
-													access="(hasRole('ROLE_ADMIN') or hasRole('ROLE_SISTEMA_ARMAS_DELETE'))">
+												<%--</security:authorize> <security:authorize--%>
+													<!--access="(hasRole('ROLE_ADMIN') or hasRole('ROLE_SISTEMA_ARMAS_DELETE'))">-->
 
 													<a href="sistemaArmas/eliminar/${s.id}" data-toggle="tabla"
 														title="Eliminar"
 														class="glyphicon glyphicon-remove triggerRemove"></a>
-												</security:authorize></td>
-										</security:authorize>
+												<%--</security:authorize>--%>
+                                                                        </td>
+										<%--</security:authorize>--%>
 									</tr>
 								</c:when>
 								<c:otherwise>
 									<tr id="${s.id }">
 										<td>${s.code}</td>
 										<td>${s.description}</td>
-										<security:authorize
-											access="(hasRole('ROLE_ADMIN') or hasRole('ROLE_SISTEMA_ARMAS_DELETE') or hasRole('ROLE_SISTEMA_ARMAS_SAVE'))">
-											<td><security:authorize
-													access="(hasRole('ROLE_ADMIN') or hasRole('ROLE_SISTEMA_ARMAS_SAVE'))">
+										<%--<security:authorize--%>
+											<!--access="(hasRole('ROLE_ADMIN') or hasRole('ROLE_SISTEMA_ARMAS_DELETE') or hasRole('ROLE_SISTEMA_ARMAS_SAVE'))">-->
+											<td>
+                                                                                            <%--<security:authorize--%>
+													<!--access="(hasRole('ROLE_ADMIN') or hasRole('ROLE_SISTEMA_ARMAS_SAVE'))">-->
 													<a onclick="app.findElementById(${s.id})"
 														data-toggle="tabla" title="Modificar"
 														class="glyphicon glyphicon-edit triggerEdit"> </a>
-												</security:authorize> <security:authorize
-													access="(hasRole('ROLE_ADMIN') or hasRole('ROLE_SISTEMA_ARMAS_DELETE'))">
+												<%--</security:authorize> <security:authorize--%>
+													<!--access="(hasRole('ROLE_ADMIN') or hasRole('ROLE_SISTEMA_ARMAS_DELETE'))">-->
 
 													<a href="sistemaArmas/eliminar/${s.id}" data-toggle="tabla"
 														title="Eliminar"
 														class="glyphicon glyphicon-remove triggerRemove"></a>
-												</security:authorize></td>
-										</security:authorize>
+												<%--</security:authorize>--%>
+                                                                        </td>
+										<%--</security:authorize>--%>
 									</tr>
 								</c:otherwise>
 							</c:choose>
@@ -152,4 +156,4 @@
 		</div>
 	</div>
 </div>
-<script src="/sgl/resources/js/jSistemaArmas.js"></script>
+<script src="/recursoshumanos/resources/js/jSistemaArmas.js"></script>

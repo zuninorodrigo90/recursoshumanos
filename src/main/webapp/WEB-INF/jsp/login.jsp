@@ -3,9 +3,8 @@
 <%@ include file="../layout/taglib.jsp"%>
 <style>
 body {
-/* 	background: url(resources/images/background.jpg); */
 	
-	background-image: url(/sgl/resources/images/background.jpg);
+	background-image: url(/recursoshumanos/resources/images/background.jpg);
 	background-size: cover;
 	background-position: center;
 	background-attachment: fixed;
