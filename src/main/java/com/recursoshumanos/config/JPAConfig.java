@@ -47,19 +47,9 @@ public class JPAConfig {
         Properties prop = new Properties();
         InputStream input = null;
         try {
-//			input = new FileInputStream(Utilities.JDBC);
-//			prop.load(input);
-//			DriverManagerDataSource dataSource = new DriverManagerDataSource();
-//			dataSource.setDriverClassName(prop.getProperty("jdbc.driverClassName"));
-//			dataSource.setUrl(prop.getProperty("jdbc.url"));
-//			dataSource.setUsername(prop.getProperty("jdbc.username"));
-//			dataSource.setPassword(prop.getProperty("jdbc.password"));
-//			System.out.println("mySql");
-//			return dataSource;
-
             DriverManagerDataSource dataSource = new DriverManagerDataSource();
             dataSource.setDriverClassName("com.mysql.jdbc.Driver");
-            dataSource.setUrl("jdbc:mysql://localhost:3306/recursoshumanos");
+            dataSource.setUrl("jdbc:mysql://localhost:3306/recursoshumanos?autoReconnect=true&useSSL=false");
             dataSource.setUsername("root");
             dataSource.setPassword("1234");
             System.out.println("mySql");

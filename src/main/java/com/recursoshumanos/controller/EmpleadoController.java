@@ -3,7 +3,7 @@ package com.recursoshumanos.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.marina.annotation.DescriptionClass;
+import com.recursoshumanos.annotation.DescriptionClass;
 
 @DescriptionClass(value = "Empleado")
 @Controller

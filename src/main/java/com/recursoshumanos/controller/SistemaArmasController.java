@@ -1,10 +1,10 @@
 package com.recursoshumanos.controller;
 
+import com.recursoshumanos.annotation.Description;
 import javax.mail.MessagingException;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -15,10 +15,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.marina.annotation.Description;
-import com.marina.annotation.DescriptionClass;
+import com.recursoshumanos.annotation.DescriptionClass;
 import com.recursoshumanos.entity.SistemaArmas;
 import com.recursoshumanos.service.SistemaArmasServiceImpl;
+import org.springframework.security.access.prepost.PreAuthorize;
 
 @DescriptionClass(value = "Sistemas de Armas")
 @Controller
@@ -41,8 +41,8 @@ public class SistemaArmasController {
      * @throws MessagingException
      */
     @RequestMapping("/sistemaArmas")
-//    @PreAuthorize("isAuthenticated() and (hasRole('ROLE_ADMIN') or hasRole('ROLE_SISTEMA_ARMAS'))")
-//    @Description(value = "Visualizar Pantalla", permission = "ROLE_SISTEMA_ARMAS", description = "Permite visualizar los Sistemas de Armas registrados en la base de datos")
+    @PreAuthorize("isAuthenticated()")
+    @Description(value = "Visualizar Pantalla", permission = "ROLE_SISTEMA_ARMAS", description = "Permite visualizar los Sistemas de Armas registrados en la base de datos")
     public String registration(Model model) throws MessagingException {
         model.addAttribute("sistemasArmas", sistemaArmasService.findAll());
         return "sistemaArmas";
@@ -59,8 +59,8 @@ public class SistemaArmasController {
      * @return "sistemaArmas"
      */
     @RequestMapping(value = "/sistemaArmas", method = RequestMethod.POST)
-//    @PreAuthorize("isAuthenticated() and (hasRole('ROLE_ADMIN') or hasRole('ROLE_SISTEMA_ARMAS_SAVE'))")
-//    @Description(value = "Registrar", permission = "ROLE_SISTEMA_ARMAS_SAVE", description = "Permite registrar un Sistema de Armas en la base de datos. El permiso Visualizar Pantalla debe estar habilitado")
+    @PreAuthorize("isAuthenticated() and (hasRole('ROLE_ADMIN') or hasRole('ROLE_SISTEMA_ARMAS_SAVE'))")
+    @Description(value = "Registrar", permission = "ROLE_SISTEMA_ARMAS_SAVE", description = "Permite registrar un Sistema de Armas en la base de datos. El permiso Visualizar Pantalla debe estar habilitado")
     public String register(Model model, @ModelAttribute("sistemaArmas") @Validated SistemaArmas sistemaArmas,
             BindingResult result, @RequestParam("id") Integer idSistemaArmas) {
         if (idSistemaArmas != null) { // Es un modificar
@@ -80,8 +80,8 @@ public class SistemaArmasController {
      * @return "sistemaArmas"
      */
     @RequestMapping("/sistemaArmas/eliminar/{id}")
-//    @PreAuthorize("isAuthenticated() and (hasRole('ROLE_ADMIN') or hasRole('ROLE_SISTEMA_ARMAS_DELETE'))")
-//    @Description(value = "Eliminar", permission = "ROLE_SISTEMA_ARMAS_DELETE", description = "Permite eliminar un Sistema de Armas de la base de datos. El permiso Visualizar Pantalla debe estar habilitado")
+    @PreAuthorize("isAuthenticated() and (hasRole('ROLE_ADMIN') or hasRole('ROLE_SISTEMA_ARMAS_DELETE'))")
+    @Description(value = "Eliminar", permission = "ROLE_SISTEMA_ARMAS_DELETE", description = "Permite eliminar un Sistema de Armas de la base de datos. El permiso Visualizar Pantalla debe estar habilitado")
     public String delete(@PathVariable Integer id) {
         try {
             sistemaArmasService.delete(id);

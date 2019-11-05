@@ -1,4 +1,4 @@
-package com.marina.annotation;
+package com.recursoshumanos.annotation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -8,7 +8,10 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.METHOD)
 public @interface Description {
-	String value() ;
-	String permission();
-	String description();
+
+    String value();
+
+    String permission();
+
+    String description();
 }

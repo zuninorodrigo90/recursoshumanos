@@ -1,9 +1,10 @@
-package com.marina.annotation;
+package com.recursoshumanos.annotation;
 
 import java.lang.annotation.*;
 
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.TYPE)
 public @interface DescriptionClass {
-	String value() default "Clase no especificada";
+
+    String value() default "Clase no especificada";
 }
