@@ -2,7 +2,7 @@ package com.recursoshumanos.entity;
 
 import java.io.Serializable;
 import java.util.Set;
-
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -10,6 +10,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -27,6 +28,8 @@ public class User implements Serializable {
     @Column(columnDefinition = "tinyint(1) default 1", nullable = false)
     private boolean enabled;
     private String email;
+    @OneToOne(cascade = CascadeType.ALL)
+    private Empleado empleado;
 
     public User() {
         this.enabled = true;
@@ -108,5 +111,13 @@ public class User implements Serializable {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public Empleado getEmpleado() {
+        return empleado;
+    }
+
+    public void setEmpleado(Empleado empleado) {
+        this.empleado = empleado;
     }
 }

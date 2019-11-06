@@ -47,7 +47,7 @@
 	</definition>
 
 	<definition name="sistemaArmas" extends="conNavBar">
-		<put-attribute name="title" value="SGL Sistema de Armas" />
+		<put-attribute name="title" value="Sistema de Armas" />
 		<put-attribute name="body" value="/WEB-INF/jsp/sistemaArmas.jsp" />
 		<put-attribute name="current" value="sistemaArmas" />
 	</definition>
