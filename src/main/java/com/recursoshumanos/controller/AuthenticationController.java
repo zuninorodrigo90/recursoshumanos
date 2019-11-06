@@ -91,6 +91,6 @@ public class AuthenticationController {
 	 */
 	@RequestMapping(value = "/")
 	public String main() {
-		return "login";
+		return "Hola Mundo :P";
 	}
 }
