@@ -3,67 +3,73 @@
        "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
 <tiles-definitions>
-	<definition name="conNavBar" template="/WEB-INF/layout/classicConNavBar.jsp">
-		<!-- <put-attribute name="title" value="Tiles tutorial homepage" /> <put-attribute 
-			name="body" value="/tiles/home_body.jsp" /> -->
-		<put-attribute name="footer" value="/WEB-INF/layout/footer.jsp" />
-		<put-attribute name="menu" value="/WEB-INF/layout/menu.jsp" />
-	</definition>
+    <definition name="conNavBar" template="/WEB-INF/layout/classicConNavBar.jsp">
+        <!-- <put-attribute name="title" value="Tiles tutorial homepage" /> <put-attribute 
+        name="body" value="/tiles/home_body.jsp" /> -->
+        <put-attribute name="footer" value="/WEB-INF/layout/footer.jsp" />
+        <put-attribute name="menu" value="/WEB-INF/layout/menu.jsp" />
+    </definition>
 
-	<definition name="sinNavBar" template="/WEB-INF/layout/classicSinNavBar.jsp">
-		<put-attribute name="footer" value="/WEB-INF/layout/footer.jsp" />
-	</definition>
+    <definition name="sinNavBar" template="/WEB-INF/layout/classicSinNavBar.jsp">
+        <put-attribute name="footer" value="/WEB-INF/layout/footer.jsp" />
+    </definition>
 
-	<definition name="conNavBarSinConteiner"
-		template="/WEB-INF/layout/tablasConNavBarSinConteiner.jsp">
-		<put-attribute name="footer" value="/WEB-INF/layout/footer.jsp" />
-		<put-attribute name="menu" value="/WEB-INF/layout/menu.jsp" />
-	</definition>
+    <definition name="conNavBarSinConteiner"
+                    template="/WEB-INF/layout/tablasConNavBarSinConteiner.jsp">
+        <put-attribute name="footer" value="/WEB-INF/layout/footer.jsp" />
+        <put-attribute name="menu" value="/WEB-INF/layout/menu.jsp" />
+    </definition>
 
-	<definition name="home" extends="conNavBar">
-		<put-attribute name="title" value="RH home" />
-		<put-attribute name="body" value="/WEB-INF/jsp/home.jsp" />
-		<put-attribute name="current" value="home" />
-	</definition>
+    <definition name="home" extends="conNavBar">
+        <put-attribute name="title" value="RH home" />
+        <put-attribute name="body" value="/WEB-INF/jsp/home.jsp" />
+        <put-attribute name="current" value="home" />
+    </definition>
 
-	<definition name="login" extends="sinNavBar">
-		<put-attribute name="title" value="RH" />
-		<put-attribute name="login" value="/WEB-INF/jsp/login.jsp" />
-		<put-attribute name="body" value="/WEB-INF/jsp/main.jsp" />
-		<put-attribute name="current" value="login" />
-	</definition>
+    <definition name="login" extends="sinNavBar">
+        <put-attribute name="title" value="RH" />
+        <put-attribute name="login" value="/WEB-INF/jsp/login.jsp" />
+        <put-attribute name="body" value="/WEB-INF/jsp/main.jsp" />
+        <put-attribute name="current" value="login" />
+    </definition>
 
-<!--	<definition name="asignarRoles" extends="conNavBar">
-		<put-attribute name="title" value="RH Asignar Roles" />
-		<put-attribute name="body"
-			value="/WEB-INF/jsp/administracion/asignacionRoles.jsp" />
-		<put-attribute name="current" value="administracion/asignarRoles" />
-	</definition>-->
+    <!--	<definition name="asignarRoles" extends="conNavBar">
+            <put-attribute name="title" value="RH Asignar Roles" />
+            <put-attribute name="body"
+                    value="/WEB-INF/jsp/administracion/asignacionRoles.jsp" />
+            <put-attribute name="current" value="administracion/asignarRoles" />
+    </definition>-->
 
-	<definition name="403" extends="conNavBar">
-		<put-attribute name="title" value="Acceso denegado" />
-		<put-attribute name="body" value="/WEB-INF/error/403.jsp" />
-		<put-attribute name="current" value="403" />
-	</definition>
+    <definition name="403" extends="conNavBar">
+        <put-attribute name="title" value="Acceso denegado" />
+        <put-attribute name="body" value="/WEB-INF/error/403.jsp" />
+        <put-attribute name="current" value="403" />
+    </definition>
 
-	<definition name="sistemaArmas" extends="conNavBar">
-		<put-attribute name="title" value="Sistema de Armas" />
-		<put-attribute name="body" value="/WEB-INF/jsp/sistemaArmas.jsp" />
-		<put-attribute name="current" value="sistemaArmas" />
-	</definition>
+    <definition name="sistemaArmas" extends="conNavBar">
+        <put-attribute name="title" value="Sistema de Armas" />
+        <put-attribute name="body" value="/WEB-INF/jsp/sistemaArmas.jsp" />
+        <put-attribute name="current" value="sistemaArmas" />
+    </definition>
 
-<!--	<definition name="roles" extends="conNavBar">
-		<put-attribute name="title" value="SGL Roles" />
-		<put-attribute name="body"
-			value="/WEB-INF/jsp/administracion/roles.jsp" />
-		<put-attribute name="current" value="roles" />
-	</definition>-->
+    <!--	<definition name="roles" extends="conNavBar">
+            <put-attribute name="title" value="SGL Roles" />
+            <put-attribute name="body"
+                    value="/WEB-INF/jsp/administracion/roles.jsp" />
+            <put-attribute name="current" value="roles" />
+    </definition>-->
         
-        <definition name="altaEmpleado" extends="conNavBar">
-		<put-attribute name="title" value="Alta empleado" />
-		<put-attribute name="body" value="/WEB-INF/jsp/empleado/alta.jsp" />
-		<put-attribute name="current" value="altaEmpleado" />
-	</definition>
+    <definition name="altaEmpleado" extends="conNavBar">
+        <put-attribute name="title" value="Alta empleado" />
+        <put-attribute name="body" value="/WEB-INF/jsp/empleado/alta.jsp" />
+        <put-attribute name="current" value="altaEmpleado" />
+    </definition>
+        
+    <definition name="usuario" extends="conNavBar">
+        <put-attribute name="title" value="Usuario" />
+        <put-attribute name="body" value="/WEB-INF/jsp/usuario.jsp" />
+        <put-attribute name="current" value="usuario" />
+    </definition>
         
 
 </tiles-definitions>

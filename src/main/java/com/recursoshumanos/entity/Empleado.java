@@ -15,8 +15,8 @@ public class Empleado implements Serializable {
     private Integer id;
     private String apellido;
     private String nombre;
-    private String teléfono;
-    private String dirección;
+    private String telefono;
+    private String direccion;
     private Boolean vigente;
 
     public Integer getId() {
@@ -43,20 +43,20 @@ public class Empleado implements Serializable {
         this.nombre = nombre;
     }
 
-    public String getTeléfono() {
-        return teléfono;
+    public String getTelefono() {
+        return telefono;
     }
 
-    public void setTeléfono(String teléfono) {
-        this.teléfono = teléfono;
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
     }
 
-    public String getDirección() {
-        return dirección;
+    public String getDireccion() {
+        return direccion;
     }
 
-    public void setDirección(String dirección) {
-        this.dirección = dirección;
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
     }
 
     public Boolean getVigente() {
