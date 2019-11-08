@@ -16,11 +16,11 @@ public class EmpleadoController {
      *
      * @return "altaEmpleado"
      */
-    @RequestMapping(value = "/empleado/alta")
+    @RequestMapping(value = "/empleado")
     @PreAuthorize("isAuthenticated() and (hasRole('ROLE_ADMIN') or hasRole('ROLE_EMPLEADO'))")
     @Description(value = "Visualizar Pantalla", permission = "ROLE_EMPLEADO", description = "Permite visualizar los empleados registrados en la base de datos")
     public String cargar() {
-        return "altaEmpleado";
+        return "empleado";
     }
 
 }

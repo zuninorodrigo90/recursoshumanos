@@ -59,10 +59,10 @@
             <put-attribute name="current" value="roles" />
     </definition>-->
         
-    <definition name="altaEmpleado" extends="conNavBar">
-        <put-attribute name="title" value="Alta empleado" />
-        <put-attribute name="body" value="/WEB-INF/jsp/empleado/alta.jsp" />
-        <put-attribute name="current" value="altaEmpleado" />
+    <definition name="empleado" extends="conNavBar">
+        <put-attribute name="title" value="Empleado" />
+        <put-attribute name="body" value="/WEB-INF/jsp/empleado.jsp" />
+        <put-attribute name="current" value="empleado" />
     </definition>
         
     <definition name="usuario" extends="conNavBar">
