@@ -33,7 +33,7 @@ public class EmpleadoController {
     
     //ALTA EMPLEADO
     @RequestMapping(value = "/empleado", method = RequestMethod.POST)
-    @PreAuthorize("isAuthenticated() and (hasRole('ROLE_ADMIN') or hasRole('ROLE_SISTEMA_ARMAS_SAVE'))")
+    @PreAuthorize("isAuthenticated() and (hasRole('ROLE_ADMIN') or hasRole('ROLE_EMPLEADO_SAVE'))")
     @Description(value = "Registrar", permission = "ROLE_ADMIN", description = "Permite registrar un empleado en la base de datos. El permiso Visualizar Pantalla debe estar habilitado")
     public String register(Model model, @ModelAttribute("Empleado") Empleado empleado,
             BindingResult result, @RequestParam("id") Integer idEmpleado) {

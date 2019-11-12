@@ -5,8 +5,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface EmpleadoRepository extends JpaRepository<Empleado, Integer> {
     
-    public Empleado findByName(String name);
+    public Empleado findByNombre(String name);
 
-    public List<Empleado> findByNameStartingWith(String name);
+    public List<Empleado> findByNombreStartingWith(String name);
     
 }
