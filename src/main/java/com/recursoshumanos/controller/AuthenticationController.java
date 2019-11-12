@@ -20,6 +20,7 @@ import java.util.List;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 
 @DescriptionClass(value = "Inicio Sesión")
 @Controller
@@ -36,23 +37,32 @@ public class AuthenticationController {
      */
     @RequestMapping(value = "/home")
     public String home(Principal principal) {
-        @SuppressWarnings("unchecked")
-        Collection<SimpleGrantedAuthority> oldAuthorities = (Collection<SimpleGrantedAuthority>) SecurityContextHolder
-                .getContext().getAuthentication().getAuthorities();
-//        if (oldAuthorities.isEmpty()) {
-            User user = userService.findByName(principal.getName());
-            List<SimpleGrantedAuthority> updatedAuthorities = new ArrayList<>();
-            for (Role role : user.getRoles()) {
-                for (Permission permission : role.getPermissions()) {
-                    SimpleGrantedAuthority authority = new SimpleGrantedAuthority(permission.getAuthority());
-                    updatedAuthorities.add(authority);
+        UserDetails userDetails = (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        try {
+            @SuppressWarnings("unchecked")
+            Collection<SimpleGrantedAuthority> oldAuthorities = (Collection<SimpleGrantedAuthority>) SecurityContextHolder
+                    .getContext().getAuthentication().getAuthorities();
+            if (oldAuthorities.isEmpty()) {
+                User user = userService.findByName(principal.getName());
+                List<SimpleGrantedAuthority> updatedAuthorities = new ArrayList<>();
+                for (Role role : user.getRoles()) {
+                    for (Permission permission : role.getPermissions()) {
+                        SimpleGrantedAuthority authority = new SimpleGrantedAuthority(permission.getAuthority());
+                        updatedAuthorities.add(authority);
+                    }
                 }
+                updatedAuthorities.addAll(oldAuthorities);
+                SecurityContextHolder.getContext().setAuthentication(new UsernamePasswordAuthenticationToken(
+                        SecurityContextHolder.getContext().getAuthentication().getPrincipal(),
+                        SecurityContextHolder.getContext().getAuthentication().getCredentials(), updatedAuthorities));
             }
-            updatedAuthorities.addAll(oldAuthorities);
-            SecurityContextHolder.getContext().setAuthentication(new UsernamePasswordAuthenticationToken(
-                    SecurityContextHolder.getContext().getAuthentication().getPrincipal(),
-                    SecurityContextHolder.getContext().getAuthentication().getCredentials(), updatedAuthorities));
-//        }
+        } catch (Exception e) {
+            System.out.println("EXCEPTION DEL home");
+            e.printStackTrace();
+            System.out.println(e.toString());
+            System.out.println(e.getMessage());
+        }
+
         return "home";
     }
 
@@ -89,7 +99,11 @@ public class AuthenticationController {
         if (error.equals("badCredentials")) {
             model.addAttribute("error", "Usuario o contraseña inválidos");
         } else {
-            model.addAttribute("error", "");
+            if (error.equals("disabledAccount")) {
+                model.addAttribute("error", "Cuenta inhabilitada");
+            } else {
+                model.addAttribute("error", "");
+            }
         }
         return "login";
     }

@@ -31,10 +31,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-        auth.jdbcAuthentication().usersByUsernameQuery("select name, password, 1 from user where name = ?")
+        auth.jdbcAuthentication().usersByUsernameQuery("select name, password, enabled from user where name = ?")
                 .authoritiesByUsernameQuery(
                         "SELECT user.name, permission.authority FROM ((recursoshumanos.user_role user_role  INNER JOIN recursoshumanos.user user ON (user_role.user_id = user.id))  INNER JOIN recursoshumanos.role role ON (user_role.roles_id = role.id))  INNER JOIN recursoshumanos.permission permission ON (permission.role_id = role.id) WHERE user.name = ?")
-                .dataSource(dataSource);
+                .dataSource(dataSource).and().eraseCredentials(false);
 
     }
 
@@ -54,6 +54,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         mappings.put("org.springframework.security.authentication.CredentialsExpiredException", "/reset");
         mappings.put("org.springframework.security.authentication.LockedException", "/locked");
         mappings.put("org.springframework.security.authentication.BadCredentialsException", "/badCredentials");
+        mappings.put("org.springframework.security.authentication.DisabledException", "/disabledAccount");
         mappings.put("org.springframework.security.core.userdetails.UsernameNotFoundException", "/error");
         ex.setExceptionMappings(mappings);
         return ex;

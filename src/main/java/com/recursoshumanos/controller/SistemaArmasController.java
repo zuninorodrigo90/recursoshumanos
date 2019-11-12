@@ -41,7 +41,7 @@ public class SistemaArmasController {
      * @throws MessagingException
      */
     @RequestMapping("/sistemaArmas")
-    @PreAuthorize("isAuthenticated()")
+    @PreAuthorize("isAuthenticated() and (hasRole('ROLE_ADMIN') or hasRole('ROLE_SISTEMA_ARMAS'))")
     @Description(value = "Visualizar Pantalla", permission = "ROLE_SISTEMA_ARMAS", description = "Permite visualizar los Sistemas de Armas registrados en la base de datos")
     public String registration(Model model) throws MessagingException {
         model.addAttribute("sistemasArmas", sistemaArmasService.findAll());

@@ -63,14 +63,12 @@ $(document).ready(
 function eliminar(id) {
 	$.ajax({
 		type : "GET",
-		url : "/sgl/administracion/roles/eliminar/" + id,
+		url : "/recursoshumanos/administracion/roles/eliminar/" + id,
 		success : function(response) {
 			if (response != "") {
-				window.location.replace("/sgl/administracion/roles");
+				window.location.replace("/recursoshumanos/administracion/roles");
 			} else {
 				$("#modalRemove").modal('hide');
-//				$("#modalRemoveForced #removeBtnForced").attr("href",
-//						"/sgl/roles/eliminar/forced/" + id);
 				$("#modalRemoveForced").modal();
 			}
 		}

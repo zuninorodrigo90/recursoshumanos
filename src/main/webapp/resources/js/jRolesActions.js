@@ -8,7 +8,7 @@ function loadModal(idPage) {
 	$('#a'+ idPage).addClass('active');
 	$.ajax({
 		type : "GET",
-		url : "/sgl/rolesActions/loadRolesActions/" + idPage,
+		url : "/recursoshumanos/rolesActions/loadRolesActions/" + idPage,
 		success : function(response) {
 			if (response != "") {
 				var columns='<td>'+"Roles/Acciones"+'</td>';
@@ -68,7 +68,7 @@ function save() {
 		contentType : 'application/json; charset=utf-8',
 		dataType : 'json',
 		data : JSON.stringify(resultadoView),
-		url : "/sgl/rolesAcciones/" + jsonParameter,
+		url : "/recursoshumanos/rolesAcciones/" + jsonParameter,
 	})
 	hideModal();
 }
