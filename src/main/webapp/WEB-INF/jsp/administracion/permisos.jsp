@@ -3,10 +3,10 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <%@ include file="../../layout/taglib.jsp"%>
-<script src="/sgl/resources/js/jPermission.js"></script>
-<link href="/sgl/resources/css/jquery.dataTables.min.css"
+<script src="/recursoshumanos/resources/js/jPermission.js"></script>
+<link href="/recursoshumanos/resources/css/jquery.dataTables.min.css"
 	rel="stylesheet">
-<script src="/sgl/resources/js/jquery.dataTables.min.js"></script>
+<script src="/recursoshumanos/resources/js/jquery.dataTables.min.js"></script>
 <h1>Administración de permisos</h1>
 
 <div style="background-color: rgba(255, 255, 255, 0.68)">

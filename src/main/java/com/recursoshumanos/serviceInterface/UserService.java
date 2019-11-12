@@ -1,5 +1,6 @@
 package com.recursoshumanos.serviceInterface;
 
+import com.recursoshumanos.entity.Role;
 import java.util.List;
 
 import com.recursoshumanos.entity.User;
@@ -48,5 +49,7 @@ public interface UserService {
 	public List<User> findByNameStartingWith(String name);
 	
 	public void save(User user);
+        
+        public void saveWithHistorial(User userModified, User userActuator, int email, Role role, String accion);
 	
 }

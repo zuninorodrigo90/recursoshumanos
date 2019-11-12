@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ include file="../../layout/taglib.jsp"%>
-<script src="/sgl/resources/js/jAsignacionRoles.js"></script>
+<script src="/recursoshumanos/resources/js/jAsignacionRoles.js"></script>
 <h1>Asignación de roles</h1>
 <div class="row">
 	<div class="col-md-6 col-md-6 col-md-offset-4 sidebar-offcanvas">
@@ -66,7 +66,7 @@
 				</table>
 			</div>
 			<div class="modal-footer">
-				<a id="btnAceptarDialog" class="btn btn-default" onclick="showHistorial()">Mostrar Historial</a>
+                            <a id="btnAceptarDialog" class="btn btn-default" onclick="showHistorial()">Mostrar Historial</a>
 				<a id="btnAceptarDialog" class="btn btn-primary"
 					data-dismiss="modal">Aceptar</a>
 			</div>
@@ -108,4 +108,3 @@
 		</div>
 	</div>
 </div>
-

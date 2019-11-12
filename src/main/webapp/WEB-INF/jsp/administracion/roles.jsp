@@ -34,13 +34,6 @@
 			</div>
 		</form:form>
 
-<!-- 		<div id="draggable" class="ui-widget-content draggable"> -->
-<!-- 			<p>Drag me to my target</p> -->
-<!-- 		</div> -->
-
-<!-- 		<div id="droppable" class="ui-widget-header droppable"> -->
-<!-- 			<p>Drop here</p> -->
-<!-- 		</div> -->
 
 	</div>
 	<div class="col-md-6">
@@ -119,7 +112,4 @@
 		</div>
 	</div>
 </div>
-<script src="/sgl/resources/js/jRoles.js"></script>
-<!-- <link rel="stylesheet" -->
-<!-- 	href="/sgl/resources/css/jquery-ui-1-12-1.css" rel="stylesheet"> -->
-<!-- <script src="/sgl/resources/js/jquery-ui-1.12.1.js"></script> -->
+<script src="/recursoshumanos/resources/js/jRoles.js"></script>

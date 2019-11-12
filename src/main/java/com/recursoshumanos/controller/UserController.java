@@ -51,7 +51,7 @@ public class UserController {
 
     //**Metodo Alta de usuario
     @RequestMapping(value = "/usuario", method = RequestMethod.POST)
-    @PreAuthorize("isAuthenticated() and (hasRole('ROLE_ADMIN')")
+    @PreAuthorize("isAuthenticated() and (hasRole('ROLE_ADMIN') or hasRole('ROLE_USUARIO_SAVE'))")
     @Description(value = "Registrar", permission = "ROLE_ADMIN", description = "Permite crear un nuevo usuario y guardarlo en la base de datos")
     public String register(Model model, @ModelAttribute("User") User user,
             BindingResult result, @RequestParam("id") Integer idUser) {
