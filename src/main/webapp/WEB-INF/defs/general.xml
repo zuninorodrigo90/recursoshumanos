@@ -15,13 +15,13 @@
     </definition>
 
     <definition name="conNavBarSinConteiner"
-                    template="/WEB-INF/layout/tablasConNavBarSinConteiner.jsp">
+                template="/WEB-INF/layout/tablasConNavBarSinConteiner.jsp">
         <put-attribute name="footer" value="/WEB-INF/layout/footer.jsp" />
         <put-attribute name="menu" value="/WEB-INF/layout/menu.jsp" />
     </definition>
 
     <definition name="home" extends="conNavBar">
-        <put-attribute name="title" value="RH home" />
+        <put-attribute name="title" value="Home" />
         <put-attribute name="body" value="/WEB-INF/jsp/home.jsp" />
         <put-attribute name="current" value="home" />
     </definition>
@@ -33,12 +33,12 @@
         <put-attribute name="current" value="login" />
     </definition>
 
-    <!--	<definition name="asignarRoles" extends="conNavBar">
-            <put-attribute name="title" value="RH Asignar Roles" />
-            <put-attribute name="body"
-                    value="/WEB-INF/jsp/administracion/asignacionRoles.jsp" />
-            <put-attribute name="current" value="administracion/asignarRoles" />
-    </definition>-->
+    <definition name="asignarRoles" extends="conNavBar">
+        <put-attribute name="title" value="Asignar Roles" />
+        <put-attribute name="body"
+                       value="/WEB-INF/jsp/administracion/asignacionRoles.jsp" />
+        <put-attribute name="current" value="administracion/asignarRoles" />
+    </definition>
 
     <definition name="403" extends="conNavBar">
         <put-attribute name="title" value="Acceso denegado" />
@@ -52,12 +52,19 @@
         <put-attribute name="current" value="sistemaArmas" />
     </definition>
 
-    <!--	<definition name="roles" extends="conNavBar">
-            <put-attribute name="title" value="SGL Roles" />
-            <put-attribute name="body"
-                    value="/WEB-INF/jsp/administracion/roles.jsp" />
-            <put-attribute name="current" value="roles" />
-    </definition>-->
+    <definition name="roles" extends="conNavBar">
+        <put-attribute name="title" value="Roles" />
+        <put-attribute name="body"
+                           value="/WEB-INF/jsp/administracion/roles.jsp" />
+        <put-attribute name="current" value="roles" />
+    </definition>
+    
+     <definition name="permisos" extends="conNavBar">
+        <put-attribute name="title" value="Permisos" />
+        <put-attribute name="body"
+                           value="/WEB-INF/jsp/administracion/permisos.jsp" />
+        <put-attribute name="current" value="permisos" />
+    </definition>
         
     <definition name="empleado" extends="conNavBar">
         <put-attribute name="title" value="Empleado" />

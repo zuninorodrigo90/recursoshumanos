@@ -16,7 +16,7 @@ function BuscarPermisos()
 	$(".permiso").each( function()
 	{
 		var permisoBuscar=$(this).attr("id");
-		var url="/sgl/permission/informar?permiso="+permisoBuscar;
+		var url="/recursoshumanos/permission/informar?permiso="+permisoBuscar;
 		// Para cada uno, pido un json
 		$.getJSON(url,
 		{
@@ -42,7 +42,7 @@ function BuscarPermisos()
 function cambiarPermiso(item)
 {
 	var permisoBuscar=item.id;
-	var url="/sgl/permission/modificar?permiso="+permisoBuscar;
+	var url="/recursoshumanos/permission/modificar?permiso="+permisoBuscar;
 	// Para cada uno, pido un json
 	$.getJSON(url,
 	{

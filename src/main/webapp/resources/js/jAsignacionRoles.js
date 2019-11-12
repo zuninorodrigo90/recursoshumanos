@@ -17,7 +17,7 @@ function loadModal(id, name) {
 	$
 			.ajax({
 				type : "POST",
-				url : "/sgl/administracion/asignarRoles/findRoles/" + id,
+				url : "/recursoshumanos/administracion/asignarRoles/findRoles/" + id,
 				success : function(response) {
 					for (var i = 0; i < response.length; i++) {
 						document.getElementById('role' + response[i].id).checked = true;
@@ -47,7 +47,7 @@ function addOrRemoveRole(idRole) {
 		contentType : 'application/json; charset=utf-8',
 		dataType : 'json',
 		data : JSON.stringify(user),
-		url : "/sgl/administracion/asignarRoles/assingRole"
+		url : "/recursoshumanos/administracion/asignarRoles/assingRole"
 	// success : function(response) {
 	//			
 	// }
@@ -63,7 +63,7 @@ function showHistorial() {
 				contentType : 'application/json; charset=utf-8',
 				dataType : 'json',
 				data : JSON.stringify(document.getElementById('idUser').value),
-				url : "/sgl/administracion/asignarRoles/showHistorial",
+				url : "/recursoshumanos/administracion/asignarRoles/showHistorial",
 				success : function(response) {
 					if (response.length != 0) {
 						for (var i = 0; i < response.length; i++) {
@@ -77,7 +77,7 @@ function showHistorial() {
 						}
 					} else {
 						var tbodyHistorial = document.getElementById('tbodyHistorial');
-						tbodyHistorial.innerHTML = '<tr><td colspan="4">El usuario NO posee asignación de roles</td></tr>';
+						tbodyHistorial.innerHTML = '<tr><td colspan="4">El usuario NO posee asignacion de roles</td></tr>';
 					}
 					$("#modalHistorial").modal();
 				}
