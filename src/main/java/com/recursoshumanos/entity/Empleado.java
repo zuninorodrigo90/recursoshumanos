@@ -1,9 +1,11 @@
 package com.recursoshumanos.entity;
 
 import java.io.Serializable;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -17,8 +19,17 @@ public class Empleado implements Serializable {
     private String nombre;
     private String telefono;
     private String direccion;
+    private double salario;
+    private int antiguedad;
     private Boolean vigente;
+    private Boolean tipoEmpleado;    
+    private Boolean reparto;
+    @OneToOne(cascade = CascadeType.ALL)
+    private Categoria categoria;
 
+    public Empleado() {
+    }
+    
     public Integer getId() {
         return id;
     }
@@ -66,4 +77,45 @@ public class Empleado implements Serializable {
     public void setVigente(Boolean vigente) {
         this.vigente = vigente;
     }
+
+    public Boolean getTipoEmpleado() {
+        return tipoEmpleado;
+    }
+
+    public void setTipoEmpleado(Boolean tipoEmpleado) {
+        this.tipoEmpleado = tipoEmpleado;
+    }
+
+    public double getSalario() {
+        return salario;
+    }
+
+    public void setSalario(double salario) {
+        this.salario = salario;
+    }
+
+    public int getAntiguedad() {
+        return antiguedad;
+    }
+
+    public void setAntiguedad(int antiguedad) {
+        this.antiguedad = antiguedad;
+    }
+
+    public Boolean getReparto() {
+        return reparto;
+    }
+
+    public void setReparto(Boolean reparto) {
+        this.reparto = reparto;
+    }
+
+    public Categoria getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
+    }
+    
 }
