@@ -1,7 +1,6 @@
 package com.recursoshumanos.service;
 
 import com.recursoshumanos.entity.Empleado;
-import com.recursoshumanos.entity.SistemaArmas;
 import com.recursoshumanos.repository.EmpleadoRepository;
 import com.recursoshumanos.serviceInterface.EmpleadoService;
 import java.util.List;

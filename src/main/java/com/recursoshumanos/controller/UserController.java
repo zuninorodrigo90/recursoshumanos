@@ -49,10 +49,9 @@ public class UserController {
         return "usuario";
     }
 
-    //**Metodo Alta de usuario
     @RequestMapping(value = "/usuario", method = RequestMethod.POST)
     @PreAuthorize("isAuthenticated() and (hasRole('ROLE_ADMIN') or hasRole('ROLE_USUARIO_SAVE'))")
-    @Description(value = "Registrar", permission = "ROLE_ADMIN", description = "Permite crear un nuevo usuario y guardarlo en la base de datos")
+    @Description(value = "Registrar", permission = "ROLE_USUARIO_SAVE", description = "Permite crear un nuevo usuario y guardarlo en la base de datos")
     public String register(Model model, @ModelAttribute("User") User user,
             BindingResult result, @RequestParam("id") Integer idUser) {
         if (idUser != null) {
@@ -66,11 +65,9 @@ public class UserController {
         }
     }
 
-    //metodo eliminar usuario
     @RequestMapping("/usuario/eliminar/{id}")
-    @PreAuthorize("isAuthenticated() and (hasRole('ROLE_ADMIN')")
-    @Description(value = "Eliminar", permission = "ROLE_ADMIN", description
-            = " Elimina un usuario del sistema")
+    @PreAuthorize("isAuthenticated() and (hasRole('ROLE_ADMIN') or hasRole('ROLE_USUARIO_DELETE'))")
+    @Description(value = "Eliminar", permission = "ROLE_USUARIO_DELETE", description = "Permite eliminar un usuario de la base de datos. El permiso Visualizar Pantalla debe estar habilitado")
     public String delete(@PathVariable Integer id) {
         try {
             userService.delete(id);
@@ -85,19 +82,4 @@ public class UserController {
         }
         return "redirect:/usuario";
     }
-    /**
-     * @RequestMapping(value = "/sistemaArmas", method = RequestMethod.POST)
-     * @PreAuthorize("isAuthenticated() and (hasRole('ROLE_ADMIN') or
-     * hasRole('ROLE_SISTEMA_ARMAS_SAVE'))")
-     * @Description(value = "Registrar", permission = "ROLE_SISTEMA_ARMAS_SAVE",
-     * description = "Permite registrar un Sistema de Armas en la base de datos.
-     * El permiso Visualizar Pantalla debe estar habilitado") public String
-     * register(Model model, @ModelAttribute("sistemaArmas") @Validated
-     * SistemaArmas sistemaArmas, BindingResult result, @RequestParam("id")
-     * Integer idSistemaArmas) { if (idSistemaArmas != null) { // Es un
-     * modificar sistemaArmasService.save(sistemaArmas); return
-     * "redirect:/sistemaArmas"; } else { // Es uno nuevo
-     * sistemaArmas.setVigente(true); sistemaArmasService.save(sistemaArmas);
-     * return "redirect:/sistemaArmas"; } }
-     */
 }
