@@ -66,19 +66,25 @@ public class UserController {
         }
     }
 
-    
-      //metodo eliminar usuario
-     
-      @RequestMapping("/usuario/eliminar/{id}")
-      @PreAuthorize("isAuthenticated() and (hasRole('ROLE_ADMIN')")
-      @Description(value = "Eliminar", permission = "ROLE_ADMIN", description =
-     " Elimina un usuario del sistema") public String delete(@PathVariable
-      Integer id) { try { userService.delete(id); } catch
-      (DataIntegrityViolationException ex) { if
-      (ex.getCause().getClass().getName() ==
-      "org.hibernate.exception.ConstraintViolationException") { User saToDelete
-      = userService.findById(id); saToDelete.setEnabled(false);
-      userService.save(saToDelete); } } return "redirect:/usuario"; }
+    //metodo eliminar usuario
+    @RequestMapping("/usuario/eliminar/{id}")
+    @PreAuthorize("isAuthenticated() and (hasRole('ROLE_ADMIN')")
+    @Description(value = "Eliminar", permission = "ROLE_ADMIN", description
+            = " Elimina un usuario del sistema")
+    public String delete(@PathVariable Integer id) {
+        try {
+            userService.delete(id);
+        } catch (DataIntegrityViolationException ex) {
+            if (ex.getCause().getClass().getName()
+                    == "org.hibernate.exception.ConstraintViolationException") {
+                User saToDelete
+                        = userService.findById(id);
+                saToDelete.setEnabled(false);
+                userService.save(saToDelete);
+            }
+        }
+        return "redirect:/usuario";
+    }
     /**
      * @RequestMapping(value = "/sistemaArmas", method = RequestMethod.POST)
      * @PreAuthorize("isAuthenticated() and (hasRole('ROLE_ADMIN') or
