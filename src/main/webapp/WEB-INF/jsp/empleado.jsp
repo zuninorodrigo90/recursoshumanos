@@ -1,5 +1,3 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -28,11 +26,7 @@
             <div class="col-md-3">
                 <h2> Alta de empleado </h2>
                 <form>
-
-                    <div class="form-group">
-                        <label> Legajo </label>
-                        <input class="form-control" id="legajo" placeholder="" readonly></input>
-                    </div>
+        
                     <div class="form-group">
                         <label> Nombre </label>
                         <input class="form-control" id="nombre" placeholder="Ingrese un nombre"></input>
@@ -61,6 +55,11 @@
                             <option>No</option>
                         </select>
                     </div>
+                    
+                    <div class="form-group" id="salario">
+                        <label> Especifique salario básico </label>
+                        <input type="number"  placeholder="Ingrese un salario"></input>
+                    </div>
 
                     <div class="form-group" id="categoria">
                         <label> Categoría </label>
@@ -69,6 +68,11 @@
                             <option>2</option>
                             <option>3</option>
                         </select>
+                    </div>
+                    
+                     <div class="form-group" id="horasTrabajo">
+                        <label> Cantidad de horas de trabajo por mes </label>
+                        <input type="number"  placeholder="Ingrese un número"></input>
                     </div>
 
                     <div class="form-group">
@@ -165,31 +169,8 @@
 
         </div>
     </div>
-
-    <script>
-
-        $(document).ready(function () {
-
-            $("#aportes").hide();
-            $("#categoria").hide();
-
-            $("#tipoDeEmpleado").change(function () {
-                if (($('#tipoDeEmpleado option[value="1"]').is(':selected'))) {
-                    $('#categoria').show();
-                    $("#aportes").hide();
-
-                } else if (($('#tipoDeEmpleado option[value="2"]').is(':selected'))) {
-                    $("#aportes").show();
-                    $("#categoria").hide();
-                }
-
-
-
-            });
-        });
-
-    </script>
-    <script src="/recursoshumanos/resources/js/jSistemaArmas.js"></script>
+    
+    <script src="/recursoshumanos/resources/js/jEmpleado.js"></script>
 </body>
 
 </html>
