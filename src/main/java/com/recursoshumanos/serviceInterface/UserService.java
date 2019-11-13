@@ -39,6 +39,12 @@ public interface UserService {
 	 */
 	public User findByName(String name);
 
+        /**
+	 * Método que borra un usuario dado su id
+	 * @param id El id del usuario a borrar
+	 */
+        
+        public void delete(Integer id);
 	/**
 	 * Método que busca a los usuarios que comiencen con ese nombre
 	 * 

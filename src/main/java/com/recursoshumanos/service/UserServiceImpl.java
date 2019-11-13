@@ -64,4 +64,8 @@ public class UserServiceImpl implements UserService {
         repository.save(userModified);
         historialRepository.save(historial);
     }
+    @Override
+	public void delete(Integer id) {
+		repository.delete(id);
+	}
 }
