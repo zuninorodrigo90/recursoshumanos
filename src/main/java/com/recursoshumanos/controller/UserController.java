@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import com.recursoshumanos.annotation.DescriptionClass;
+import javax.mail.MessagingException;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -40,12 +41,14 @@ public class UserController {
     /**
      * Método que carga la pagina de alta usuario.
      *
+     * @param model
      * @return "altaUsuario"
      */
     @RequestMapping(value = "/usuario")
     @PreAuthorize("isAuthenticated() and (hasRole('ROLE_ADMIN') or hasRole('ROLE_USUARIO'))")
     @Description(value = "Visualizar Pantalla", permission = "ROLE_USUARIO", description = "Permite visualizar los usuario registrados en la base de datos")
-    public String cargar() {
+    public String cargar(Model model) throws MessagingException{
+        model.addAttribute("usuario", userService.findAll());
         return "usuario";
     }
 
