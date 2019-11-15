@@ -9,5 +9,9 @@ public interface EmpleadoService {
 	public void save(List<Empleado> empleado);
 
 	public void save(Empleado empleado);
-
+        
+        public double calcularSalarioEfectivo();
+        
+        public double calcularSalarioContratado();
+        
 }

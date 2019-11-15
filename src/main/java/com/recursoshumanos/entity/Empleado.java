@@ -26,6 +26,8 @@ public class Empleado implements Serializable {
     private Boolean reparto;
     @OneToOne(cascade = CascadeType.ALL)
     private Categoria categoria;
+    private double horas;
+    private double basico;    
 
     public Empleado() {
     }
@@ -116,6 +118,22 @@ public class Empleado implements Serializable {
 
     public void setCategoria(Categoria categoria) {
         this.categoria = categoria;
+    }
+    
+    public double getHoras() {
+        return horas;
+    }
+
+    public void setHoras(double horas) {
+        this.horas = horas;
+    }
+
+    public double getBasico() {
+        return basico;
+    }
+
+    public void setBasico(double basico) {
+        this.basico = basico;
     }
     
 }

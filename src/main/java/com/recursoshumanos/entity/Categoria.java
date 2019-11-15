@@ -1,4 +1,3 @@
-
 package com.recursoshumanos.entity;
 
 import java.io.Serializable;
@@ -13,23 +12,24 @@ public class Categoria implements Serializable {
     
     @Id
     @GeneratedValue
-    private int id;
-    private int codigo;
+    private Integer id;
+    private Integer codigo;
     private String descripcion;
+    private Double precioHora;
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
-    public int getCodigo() {
+    public Integer getCodigo() {
         return codigo;
     }
 
-    public void setCodigo(int codigo) {
+    public void setCodigo(Integer codigo) {
         this.codigo = codigo;
     }
 
@@ -39,6 +39,14 @@ public class Categoria implements Serializable {
 
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
+    }
+    
+    public Double getPrecioHora() {
+        return precioHora;
+    }
+
+    public void setPrecioHora(Double precioHora) {
+        this.precioHora = precioHora;
     }
     
     
