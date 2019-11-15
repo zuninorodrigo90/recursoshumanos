@@ -95,58 +95,57 @@
     </style>
 
 
-   <div class="row vertical-offset-100">
-   
-    <div class="col-md-4 col-md-offset-4">
-         
-       
-       
-        <div class="panel panel-info">
-                   
-            <div class="panel-heading">
-                                                       
-           
-                <div class="row-fluid user-row">
-                    <img src="resources/images/logoSgl.png" class="img-responsive" />
-                                        <form class="form-signin" action="login" method="POST">
-                                            <p class= "panel-title"> <h2 class="text-info"><strong>BIENVENIDO</strong></h2></p>
+    <div class="row vertical-offset-100">
+
+        <div class="col-md-4 col-md-offset-4">
+
+
+
+            <div class="panel panel-info">
+
+                <div class="panel-heading">
+
+
+                    <div class="row-fluid user-row" style="text-align: center;">
+                        <img src="resources/images/logoSgl.png" class="img-responsive" />
+                        <form class="form-signin" action="login" method="POST">
+                            <p class= "panel-title"> <h2 class="text-info"><strong>BIENVENIDO</strong></h2></p>
+                    </div>
+
                 </div>
-                               
-            </div>
-                   
-            <div class="panel-heading">
-                           
-                <form class="form-signin" action="login" method="POST">
-                                   <i class="fas fa-user-friends"></i>
-                                   
-                                 
-                                    <div class="form-group">
-                                    <div class="inner-addon left-addon">                                          
-                                       <i class="glyphicon glyphicon-user"></i>
-                                     <p><input class="form-control transparent-input" type="text" name="username"size="60" class="form-control"
-                                             placeholder="Usuario" required autofocus> </p>
-                                     </div>
-                                 
-                                   
-                                    <div class="form-group">
-                                    <div class="inner-addon left-addon">
-                                      <i class="glyphicon glyphicon-lock"></i>
+
+                <div class="panel-heading">
+
+                    <form class="form-signin" action="login" method="POST">
+                        <i class="fas fa-user-friends"></i>
+
+
+                        <div class="form-group">
+                            <div class="inner-addon left-addon">                                          
+                                <i class="glyphicon glyphicon-user"></i>
+                                <p><input class="form-control transparent-input" type="text" name="username"size="60" class="form-control"
+                                          placeholder="Usuario" required autofocus> </p>
+                            </div>
+
+
+                            <div class="form-group">
+                                <div class="inner-addon left-addon">
+                                    <i class="glyphicon glyphicon-lock"></i>
                                     <p> <input class="form-control transparent-input" type="password" name="password" size="60" class="form-control"
-                                              placeholder="Contraseña" required >  </p>
-                                   
-                       
-                    <c:if test="${error != null}">
-                        <p class="text-center error">${error}</p>
-                    </c:if>
-                                                <p>   <button class="btn-info btn-lg btn-block" type="submit">Ingresar
-                                                        »</button> </p>
-                                </form>          
-                </form>
-                   </div>
+                                               placeholder="Contraseña" required >  </p>
+
+
+                                    <c:if test="${error != null}">
+                                        <p class="text-center error">${error}</p>
+                                    </c:if>
+                                    <p>   <button class="btn-info btn-lg btn-block" type="submit">Ingresar
+                                            »</button> </p>
+                                    </form>          
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                </div    
+            </div>
         </div>
-              </div>
-       </div    
-     </div>
     </div>
-</div>
-    
