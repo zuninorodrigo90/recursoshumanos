@@ -23,7 +23,7 @@
 	</build>
 	<properties>
 		<project.build.sourceEncoding>ISO-8859-1</project.build.sourceEncoding>
-		<org.springframework.version>4.3.6.RELEASE</org.springframework.version>
+		<org.springframework.version>6.0.0</org.springframework.version>
 		<apache.tiles>3.0.7</apache.tiles>
 		<spring.security.version>4.2.2.RELEASE</spring.security.version>
 		<failOnMissingWebXml>false</failOnMissingWebXml>
